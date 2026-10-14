@@ -1,0 +1,16 @@
+[package]
+name = "squeeze-pic-cli"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+
+[[bin]]
+name = "squeeze-pic"
+path = "src/main.rs"
+
+[dependencies]
+squeeze-pic-core = { path = "../squeeze-pic-core" }
+serde_json.workspace = true
+serde.workspace = true
+clap = { version = "4", features = ["derive"] }
+ctrlc = "3"

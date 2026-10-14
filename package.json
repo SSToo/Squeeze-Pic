@@ -1,0 +1,31 @@
+{
+  "name": "squeeze-pic",
+  "private": true,
+  "version": "0.2.2",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/prepare-worker.mjs && vite",
+    "dev:web": "vite",
+    "build": "tsc --noEmit && node scripts/prepare-worker.mjs --release && node scripts/prepare-notices.mjs && vite build",
+    "build:web": "tsc --noEmit && vite build",
+    "check": "tsc --noEmit",
+    "tauri": "tauri",
+    "notices": "node scripts/prepare-notices.mjs",
+    "package:mac": "tauri build --bundles app && node scripts/package-macos.mjs"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2",
+    "@tauri-apps/plugin-dialog": "^2",
+    "lucide-react": "^0.468.0",
+    "react": "^19",
+    "react-dom": "^19"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^5",
+    "typescript": "^5.9",
+    "vite": "^7"
+  }
+}

@@ -1,0 +1,26 @@
+[workspace]
+members = ["crates/squeeze-pic-core", "crates/squeeze-pic-cli", "src-tauri"]
+default-members = ["crates/squeeze-pic-core", "crates/squeeze-pic-cli"]
+resolver = "3"
+
+[workspace.package]
+version = "0.2.2"
+edition = "2024"
+rust-version = "1.92"
+
+[workspace.dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "2"
+tempfile = "3"
+sha2 = "0.10"
+image = { version = "=0.25.10", default-features = false, features = ["jpeg", "png", "webp", "avif", "gif", "bmp", "tiff", "ico"] }
+mozjpeg = { version = "=0.10.13", default-features = false, features = ["parallel"] }
+mozjpeg-sys = { version = "=2.2.3", default-features = false, features = ["parallel", "unwinding"] }
+
+[profile.release]
+strip = true
+lto = "thin"
+
+[profile.release.build-override]
+strip = false

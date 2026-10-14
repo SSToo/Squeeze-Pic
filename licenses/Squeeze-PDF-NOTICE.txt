@@ -1,0 +1,12 @@
+Squeeze PDF
+Copyright 2026 Squeeze PDF contributors
+
+Original Squeeze PDF code is licensed under the Apache License, Version 2.0.
+See LICENSE for the full terms.
+
+Third-party code, fonts, and other assets retain their original copyrights
+and licenses. The project's Apache-2.0 license does not replace them.
+See licenses/ in the source repository and third-party/ in distributions
+for third-party notices, separately licensed font sources, and MPL sources.
+
+This software is based in part on the work of the Independent JPEG Group.

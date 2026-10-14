@@ -1,0 +1,359 @@
+{
+  "date": "2026-10-14",
+  "environment": "macOS Apple silicon / Rust 1.92.0 / release",
+  "corpus": "synthetic, 768x512; same fixtures reused in every pass",
+  "order": [
+    "baseline",
+    "optimized",
+    "optimized",
+    "baseline"
+  ],
+  "samples_per_version_per_case": 6,
+  "rows": [
+    {
+      "case": "png-ui",
+      "baseline": {
+        "bytes": 3733,
+        "sha256": "3ef674e0d4494a0e9bfa09edf09d6bd9c1993b7993d59ca1777aefcb60712f9c",
+        "encoding": "png/lossless-optimize",
+        "png_depth_color": [
+          8,
+          6
+        ],
+        "samples_ms": [
+          342.403875,
+          367.063792,
+          381.47579199999996,
+          422.347875,
+          422.70487499999996,
+          430.14808300000004
+        ],
+        "median_ms": 401.91183349999994
+      },
+      "optimized": {
+        "bytes": 1354,
+        "sha256": "9458acd7a72095e42b5243940b6a25dbb4f4a74bf59d224946a43760ec723fba",
+        "encoding": "png/lossless-optimize",
+        "png_depth_color": [
+          4,
+          3
+        ],
+        "samples_ms": [
+          207.157458,
+          211.51600000000002,
+          229.927291,
+          189.592959,
+          190.799625,
+          199.409334
+        ],
+        "median_ms": 203.28339599999998
+      },
+      "size_reduction_percent": 63.72890436646129,
+      "time_reduction_percent": 49.420898053751884
+    },
+    {
+      "case": "png-gray",
+      "baseline": {
+        "bytes": 3771,
+        "sha256": "0a0daebe4ed0cd5ea18f660ea8e736310a28c5a34df0ba098be004dbedaea6b1",
+        "encoding": "png/lossless-optimize",
+        "png_depth_color": [
+          8,
+          6
+        ],
+        "samples_ms": [
+          372.108416,
+          376.231542,
+          380.852333,
+          393.30179100000004,
+          403.428917,
+          418.24699999999996
+        ],
+        "median_ms": 387.077062
+      },
+      "optimized": {
+        "bytes": 1436,
+        "sha256": "b13ab7106076be1aa5c7f2d9478b0757f14828da142f40a0d7930b47c9788e1a",
+        "encoding": "png/lossless-optimize",
+        "png_depth_color": [
+          4,
+          0
+        ],
+        "samples_ms": [
+          212.53025,
+          222.12125,
+          226.89904099999998,
+          201.82962500000002,
+          202.898083,
+          209.59908299999998
+        ],
+        "median_ms": 211.0646665
+      },
+      "size_reduction_percent": 61.91991514187218,
+      "time_reduction_percent": 45.47218442512618
+    },
+    {
+      "case": "png-rgb",
+      "baseline": {
+        "bytes": 274394,
+        "sha256": "1bed253503d51908e71841e8b7b70fce9ae78d31abf0218a114fb571dbec49c3",
+        "encoding": "png/lossless-optimize",
+        "png_depth_color": [
+          8,
+          6
+        ],
+        "samples_ms": [
+          1450.771459,
+          1571.826959,
+          1862.443625,
+          1457.584834,
+          1479.5255410000002,
+          1513.366208
+        ],
+        "median_ms": 1496.4458745000002
+      },
+      "optimized": {
+        "bytes": 260533,
+        "sha256": "f867e0b3df9c8705f355dacc4eaa42b08f3c469e4763877fb8323e2cf3cae0d5",
+        "encoding": "png/lossless-optimize",
+        "png_depth_color": [
+          8,
+          2
+        ],
+        "samples_ms": [
+          955.304625,
+          963.760625,
+          975.29575,
+          964.238584,
+          968.010708,
+          1104.3866659999999
+        ],
+        "median_ms": 966.124646
+      },
+      "size_reduction_percent": 5.051495295086628,
+      "time_reduction_percent": 35.43871766676451
+    },
+    {
+      "case": "png-alpha",
+      "baseline": {
+        "bytes": 5120,
+        "sha256": "d762bf3a05095322e87f71f6761f9393f3cdf2fe4a44a0efb57b38fc404aa697",
+        "encoding": "png/lossless-optimize",
+        "png_depth_color": [
+          8,
+          6
+        ],
+        "samples_ms": [
+          621.749458,
+          651.261875,
+          681.848542,
+          471.98133399999995,
+          473.20770899999997,
+          477.81425
+        ],
+        "median_ms": 549.7818540000001
+      },
+      "optimized": {
+        "bytes": 2163,
+        "sha256": "57fed472aca73145d03e0ef7e4bb543808855231bdafc792a7c2b6a7dc53683c",
+        "encoding": "png/lossless-optimize",
+        "png_depth_color": [
+          8,
+          3
+        ],
+        "samples_ms": [
+          233.245417,
+          233.993042,
+          234.205416,
+          231.74383300000002,
+          232.82429199999999,
+          233.219167
+        ],
+        "median_ms": 233.232292
+      },
+      "size_reduction_percent": 57.75390625,
+      "time_reduction_percent": 57.57730265138944
+    },
+    {
+      "case": "png-gray-icc",
+      "baseline": {
+        "bytes": 4121,
+        "sha256": "24f5a994559883e80c1e352762653200490a49ead5232955bd8b502fbf65a410",
+        "encoding": "png/lossless-optimize",
+        "png_depth_color": [
+          8,
+          6
+        ],
+        "samples_ms": [
+          494.239959,
+          503.75658300000003,
+          514.317667,
+          378.01275,
+          379.30837499999996,
+          381.836292
+        ],
+        "median_ms": 438.0381255
+      },
+      "optimized": {
+        "bytes": 1846,
+        "sha256": "18692d62c8a29cafd43a52644de2012439cedc07b03a7ca3e24f274c63dc7d5f",
+        "encoding": "png/lossless-optimize",
+        "png_depth_color": [
+          4,
+          3
+        ],
+        "samples_ms": [
+          201.901916,
+          210.306541,
+          225.165708,
+          179.362666,
+          182.540125,
+          191.016084
+        ],
+        "median_ms": 196.459
+      },
+      "size_reduction_percent": 55.20504731861199,
+      "time_reduction_percent": 55.15025095686562
+    },
+    {
+      "case": "jpeg-rgb",
+      "baseline": {
+        "bytes": 20115,
+        "sha256": "7a309d4d758fc081553112329b2cc1ca9117e6f413fe17d041aa9fd0368cf14e",
+        "encoding": "jpeg/mozjpeg/optimized",
+        "png_depth_color": null,
+        "samples_ms": [
+          77.679417,
+          79.11720899999999,
+          83.42516699999999,
+          59.174458,
+          59.708834,
+          62.291958
+        ],
+        "median_ms": 69.9856875
+      },
+      "optimized": {
+        "bytes": 20115,
+        "sha256": "7a309d4d758fc081553112329b2cc1ca9117e6f413fe17d041aa9fd0368cf14e",
+        "encoding": "jpeg/mozjpeg/optimized",
+        "png_depth_color": null,
+        "samples_ms": [
+          48.09325,
+          49.396375,
+          53.212125,
+          41.894958,
+          43.464542,
+          43.899
+        ],
+        "median_ms": 45.996125
+      },
+      "size_reduction_percent": 0.0,
+      "time_reduction_percent": 34.277812159807674
+    },
+    {
+      "case": "jpeg-alpha",
+      "baseline": {
+        "bytes": 108428,
+        "sha256": "734aa71993b218ac3a58b5aad91de361b6eb85f54871d52ab1b9f686a68561d4",
+        "encoding": "jpeg/mozjpeg/optimized",
+        "png_depth_color": null,
+        "samples_ms": [
+          127.572667,
+          131.538292,
+          133.2075,
+          99.733417,
+          103.05937499999999,
+          110.185125
+        ],
+        "median_ms": 118.878896
+      },
+      "optimized": {
+        "bytes": 108428,
+        "sha256": "734aa71993b218ac3a58b5aad91de361b6eb85f54871d52ab1b9f686a68561d4",
+        "encoding": "jpeg/mozjpeg/optimized",
+        "png_depth_color": null,
+        "samples_ms": [
+          91.08358299999999,
+          91.423792,
+          98.206292,
+          85.905791,
+          87.37008300000001,
+          87.916917
+        ],
+        "median_ms": 89.50025
+      },
+      "size_reduction_percent": 0.0,
+      "time_reduction_percent": 24.71308784698001
+    },
+    {
+      "case": "jpeg-resize",
+      "baseline": {
+        "bytes": 3338,
+        "sha256": "37899f7f9353754860bc434c8e792319571de9b5bac06afa26df16c1a37052f1",
+        "encoding": "jpeg/mozjpeg/optimized",
+        "png_depth_color": null,
+        "samples_ms": [
+          49.399541,
+          53.313125,
+          55.812374999999996,
+          37.684666,
+          38.785584,
+          40.267041000000006
+        ],
+        "median_ms": 44.833291
+      },
+      "optimized": {
+        "bytes": 3338,
+        "sha256": "37899f7f9353754860bc434c8e792319571de9b5bac06afa26df16c1a37052f1",
+        "encoding": "jpeg/mozjpeg/optimized",
+        "png_depth_color": null,
+        "samples_ms": [
+          27.330666,
+          28.315375,
+          30.733957999999998,
+          27.651125,
+          28.398041999999997,
+          28.686333
+        ],
+        "median_ms": 28.356708499999996
+      },
+      "size_reduction_percent": 0.0,
+      "time_reduction_percent": 36.75077633716428
+    },
+    {
+      "case": "webp-deep",
+      "baseline": {
+        "bytes": 1764,
+        "sha256": "ec338e7befc35117b4929e92e256008c87828d6af13730e6026a017a2d0bdaf2",
+        "encoding": "webp/lossless/method-1",
+        "png_depth_color": null,
+        "samples_ms": [
+          44.689583,
+          46.370917,
+          46.414875,
+          32.346084,
+          33.644875,
+          38.000916000000004
+        ],
+        "median_ms": 41.3452495
+      },
+      "optimized": {
+        "bytes": 1764,
+        "sha256": "ec338e7befc35117b4929e92e256008c87828d6af13730e6026a017a2d0bdaf2",
+        "encoding": "webp/lossless/method-1",
+        "png_depth_color": null,
+        "samples_ms": [
+          32.271375,
+          32.883917,
+          36.379625,
+          31.521542,
+          33.172792,
+          33.794084000000005
+        ],
+        "median_ms": 33.0283545
+      },
+      "size_reduction_percent": 0.0,
+      "time_reduction_percent": 20.11572091250774
+    }
+  ]
+}

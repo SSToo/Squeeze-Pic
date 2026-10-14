@@ -1,0 +1,1082 @@
+{
+  "date": "2026-10-14",
+  "environment": "macOS Apple silicon / release",
+  "baseline": "0.2.1",
+  "optimized": "0.2.2",
+  "order_per_case": [
+    "baseline",
+    "optimized",
+    "optimized",
+    "baseline",
+    "baseline",
+    "optimized"
+  ],
+  "samples_per_version": 3,
+  "wall_time_includes_worker_startup": true,
+  "rss_source": "macOS /usr/bin/time -l, maximum resident set size in bytes",
+  "rows": [
+    {
+      "case": "png-ui-fast",
+      "options": {
+        "format": "png",
+        "preset": "lossless",
+        "strategy": "fast"
+      },
+      "input_sha256": "bfbe35d63b2a7174f46eb1e1bbc709e1569d9722ef5ba6ff23a1aa0e8d3094b3",
+      "samples": {
+        "baseline": [
+          {
+            "wall_ms": 43.693166999999995,
+            "core_ms": 29,
+            "rss_bytes": 14974976,
+            "bytes": 3726,
+            "sha256": "8707dee4131d5c9d30d20b642c9284748577e1fa789445cd81486f216ec3b990",
+            "encoding": "png/lossless"
+          },
+          {
+            "wall_ms": 34.914,
+            "core_ms": 24,
+            "rss_bytes": 13516800,
+            "bytes": 3726,
+            "sha256": "8707dee4131d5c9d30d20b642c9284748577e1fa789445cd81486f216ec3b990",
+            "encoding": "png/lossless"
+          },
+          {
+            "wall_ms": 37.41291700000004,
+            "core_ms": 26,
+            "rss_bytes": 13238272,
+            "bytes": 3726,
+            "sha256": "8707dee4131d5c9d30d20b642c9284748577e1fa789445cd81486f216ec3b990",
+            "encoding": "png/lossless"
+          }
+        ],
+        "optimized": [
+          {
+            "wall_ms": 206.445084,
+            "core_ms": 33,
+            "rss_bytes": 13631488,
+            "bytes": 3726,
+            "sha256": "8707dee4131d5c9d30d20b642c9284748577e1fa789445cd81486f216ec3b990",
+            "encoding": "png/single-pass"
+          },
+          {
+            "wall_ms": 41.87499999999999,
+            "core_ms": 31,
+            "rss_bytes": 13631488,
+            "bytes": 3726,
+            "sha256": "8707dee4131d5c9d30d20b642c9284748577e1fa789445cd81486f216ec3b990",
+            "encoding": "png/single-pass"
+          },
+          {
+            "wall_ms": 44.06020799999999,
+            "core_ms": 35,
+            "rss_bytes": 13598720,
+            "bytes": 3726,
+            "sha256": "8707dee4131d5c9d30d20b642c9284748577e1fa789445cd81486f216ec3b990",
+            "encoding": "png/single-pass"
+          }
+        ]
+      },
+      "baseline": {
+        "bytes": 3726,
+        "sha256": "8707dee4131d5c9d30d20b642c9284748577e1fa789445cd81486f216ec3b990",
+        "encoding": "png/lossless",
+        "wall_ms": 37.41291700000004,
+        "core_ms": 26,
+        "rss_bytes": 13516800
+      },
+      "optimized": {
+        "bytes": 3726,
+        "sha256": "8707dee4131d5c9d30d20b642c9284748577e1fa789445cd81486f216ec3b990",
+        "encoding": "png/single-pass",
+        "wall_ms": 44.06020799999999,
+        "core_ms": 33,
+        "rss_bytes": 13631488
+      },
+      "size_reduction_percent": 0.0,
+      "time_reduction_percent": -17.76736895441737,
+      "rss_reduction_percent": -0.848484848484854
+    },
+    {
+      "case": "png-ui-smart",
+      "options": {
+        "format": "png",
+        "preset": "lossless",
+        "strategy": "smart"
+      },
+      "input_sha256": "bfbe35d63b2a7174f46eb1e1bbc709e1569d9722ef5ba6ff23a1aa0e8d3094b3",
+      "samples": {
+        "baseline": [
+          {
+            "wall_ms": 197.04733299999998,
+            "core_ms": 188,
+            "rss_bytes": 22331392,
+            "bytes": 1354,
+            "sha256": "9458acd7a72095e42b5243940b6a25dbb4f4a74bf59d224946a43760ec723fba",
+            "encoding": "png/optimized"
+          },
+          {
+            "wall_ms": 196.38804199999993,
+            "core_ms": 187,
+            "rss_bytes": 21299200,
+            "bytes": 1354,
+            "sha256": "9458acd7a72095e42b5243940b6a25dbb4f4a74bf59d224946a43760ec723fba",
+            "encoding": "png/optimized"
+          },
+          {
+            "wall_ms": 196.35587500000008,
+            "core_ms": 186,
+            "rss_bytes": 21135360,
+            "bytes": 1354,
+            "sha256": "9458acd7a72095e42b5243940b6a25dbb4f4a74bf59d224946a43760ec723fba",
+            "encoding": "png/optimized"
+          }
+        ],
+        "optimized": [
+          {
+            "wall_ms": 201.252875,
+            "core_ms": 192,
+            "rss_bytes": 20152320,
+            "bytes": 1354,
+            "sha256": "9458acd7a72095e42b5243940b6a25dbb4f4a74bf59d224946a43760ec723fba",
+            "encoding": "png/raw-optimized"
+          },
+          {
+            "wall_ms": 196.64208299999996,
+            "core_ms": 186,
+            "rss_bytes": 20234240,
+            "bytes": 1354,
+            "sha256": "9458acd7a72095e42b5243940b6a25dbb4f4a74bf59d224946a43760ec723fba",
+            "encoding": "png/raw-optimized"
+          },
+          {
+            "wall_ms": 203.09083399999994,
+            "core_ms": 193,
+            "rss_bytes": 20512768,
+            "bytes": 1354,
+            "sha256": "9458acd7a72095e42b5243940b6a25dbb4f4a74bf59d224946a43760ec723fba",
+            "encoding": "png/raw-optimized"
+          }
+        ]
+      },
+      "baseline": {
+        "bytes": 1354,
+        "sha256": "9458acd7a72095e42b5243940b6a25dbb4f4a74bf59d224946a43760ec723fba",
+        "encoding": "png/optimized",
+        "wall_ms": 196.38804199999993,
+        "core_ms": 187,
+        "rss_bytes": 21299200
+      },
+      "optimized": {
+        "bytes": 1354,
+        "sha256": "9458acd7a72095e42b5243940b6a25dbb4f4a74bf59d224946a43760ec723fba",
+        "encoding": "png/raw-optimized",
+        "wall_ms": 201.252875,
+        "core_ms": 192,
+        "rss_bytes": 20234240
+      },
+      "size_reduction_percent": 0.0,
+      "time_reduction_percent": -2.477153369653773,
+      "rss_reduction_percent": 5.000000000000004
+    },
+    {
+      "case": "png-ui-deep",
+      "options": {
+        "format": "png",
+        "preset": "lossless",
+        "strategy": "deep"
+      },
+      "input_sha256": "bfbe35d63b2a7174f46eb1e1bbc709e1569d9722ef5ba6ff23a1aa0e8d3094b3",
+      "samples": {
+        "baseline": [
+          {
+            "wall_ms": 658.523166,
+            "core_ms": 649,
+            "rss_bytes": 22462464,
+            "bytes": 930,
+            "sha256": "08f4c6cf13ddd5da625ace7620d1134886727362938f1fa5894a25dea259ab9a",
+            "encoding": "png/optimized"
+          },
+          {
+            "wall_ms": 615.9541669999995,
+            "core_ms": 607,
+            "rss_bytes": 21069824,
+            "bytes": 930,
+            "sha256": "08f4c6cf13ddd5da625ace7620d1134886727362938f1fa5894a25dea259ab9a",
+            "encoding": "png/optimized"
+          },
+          {
+            "wall_ms": 611.8369999999995,
+            "core_ms": 602,
+            "rss_bytes": 21135360,
+            "bytes": 930,
+            "sha256": "08f4c6cf13ddd5da625ace7620d1134886727362938f1fa5894a25dea259ab9a",
+            "encoding": "png/optimized"
+          }
+        ],
+        "optimized": [
+          {
+            "wall_ms": 636.9354999999998,
+            "core_ms": 627,
+            "rss_bytes": 19218432,
+            "bytes": 930,
+            "sha256": "08f4c6cf13ddd5da625ace7620d1134886727362938f1fa5894a25dea259ab9a",
+            "encoding": "png/raw-optimized"
+          },
+          {
+            "wall_ms": 623.7560840000001,
+            "core_ms": 614,
+            "rss_bytes": 19202048,
+            "bytes": 930,
+            "sha256": "08f4c6cf13ddd5da625ace7620d1134886727362938f1fa5894a25dea259ab9a",
+            "encoding": "png/raw-optimized"
+          },
+          {
+            "wall_ms": 615.2700419999996,
+            "core_ms": 606,
+            "rss_bytes": 19628032,
+            "bytes": 930,
+            "sha256": "08f4c6cf13ddd5da625ace7620d1134886727362938f1fa5894a25dea259ab9a",
+            "encoding": "png/raw-optimized"
+          }
+        ]
+      },
+      "baseline": {
+        "bytes": 930,
+        "sha256": "08f4c6cf13ddd5da625ace7620d1134886727362938f1fa5894a25dea259ab9a",
+        "encoding": "png/optimized",
+        "wall_ms": 615.9541669999995,
+        "core_ms": 607,
+        "rss_bytes": 21135360
+      },
+      "optimized": {
+        "bytes": 930,
+        "sha256": "08f4c6cf13ddd5da625ace7620d1134886727362938f1fa5894a25dea259ab9a",
+        "encoding": "png/raw-optimized",
+        "wall_ms": 623.7560840000001,
+        "core_ms": 614,
+        "rss_bytes": 19218432
+      },
+      "size_reduction_percent": 0.0,
+      "time_reduction_percent": -1.2666392108360514,
+      "rss_reduction_percent": 9.069767441860465
+    },
+    {
+      "case": "png-rgb-fast",
+      "options": {
+        "format": "png",
+        "preset": "lossless",
+        "strategy": "fast"
+      },
+      "input_sha256": "a97f4ea8ea0ccc51d415b340cd2b4e21e776198ad94a541807efd44f9a072f71",
+      "samples": {
+        "baseline": [
+          {
+            "wall_ms": 231.76549999999986,
+            "core_ms": 223,
+            "rss_bytes": 15630336,
+            "bytes": 405391,
+            "sha256": "ecffdf7f10c0587e38e48773a97c0dcbbde64491d2f55ca46424938aa2247495",
+            "encoding": "png/lossless"
+          },
+          {
+            "wall_ms": 231.87912499999985,
+            "core_ms": 223,
+            "rss_bytes": 14008320,
+            "bytes": 405391,
+            "sha256": "ecffdf7f10c0587e38e48773a97c0dcbbde64491d2f55ca46424938aa2247495",
+            "encoding": "png/lossless"
+          },
+          {
+            "wall_ms": 231.286667,
+            "core_ms": 222,
+            "rss_bytes": 14024704,
+            "bytes": 405391,
+            "sha256": "ecffdf7f10c0587e38e48773a97c0dcbbde64491d2f55ca46424938aa2247495",
+            "encoding": "png/lossless"
+          }
+        ],
+        "optimized": [
+          {
+            "wall_ms": 58.259624999999815,
+            "core_ms": 49,
+            "rss_bytes": 15630336,
+            "bytes": 318096,
+            "sha256": "cfdd0d62f2dbfdbd2bd738540d43cd9a31195e80ecd75d0bb6113c0162672d33",
+            "encoding": "png/raw-optimized"
+          },
+          {
+            "wall_ms": 60.017583000000485,
+            "core_ms": 51,
+            "rss_bytes": 17219584,
+            "bytes": 318096,
+            "sha256": "cfdd0d62f2dbfdbd2bd738540d43cd9a31195e80ecd75d0bb6113c0162672d33",
+            "encoding": "png/raw-optimized"
+          },
+          {
+            "wall_ms": 61.30762500000042,
+            "core_ms": 52,
+            "rss_bytes": 15630336,
+            "bytes": 318096,
+            "sha256": "cfdd0d62f2dbfdbd2bd738540d43cd9a31195e80ecd75d0bb6113c0162672d33",
+            "encoding": "png/raw-optimized"
+          }
+        ]
+      },
+      "baseline": {
+        "bytes": 405391,
+        "sha256": "ecffdf7f10c0587e38e48773a97c0dcbbde64491d2f55ca46424938aa2247495",
+        "encoding": "png/lossless",
+        "wall_ms": 231.76549999999986,
+        "core_ms": 223,
+        "rss_bytes": 14024704
+      },
+      "optimized": {
+        "bytes": 318096,
+        "sha256": "cfdd0d62f2dbfdbd2bd738540d43cd9a31195e80ecd75d0bb6113c0162672d33",
+        "encoding": "png/raw-optimized",
+        "wall_ms": 60.017583000000485,
+        "core_ms": 51,
+        "rss_bytes": 15630336
+      },
+      "size_reduction_percent": 21.533531824830842,
+      "time_reduction_percent": 74.10417728264107,
+      "rss_reduction_percent": -11.448598130841114
+    },
+    {
+      "case": "png-rgb-smart",
+      "options": {
+        "format": "png",
+        "preset": "lossless",
+        "strategy": "smart"
+      },
+      "input_sha256": "a97f4ea8ea0ccc51d415b340cd2b4e21e776198ad94a541807efd44f9a072f71",
+      "samples": {
+        "baseline": [
+          {
+            "wall_ms": 1010.7875829999999,
+            "core_ms": 1000,
+            "rss_bytes": 27803648,
+            "bytes": 260533,
+            "sha256": "f867e0b3df9c8705f355dacc4eaa42b08f3c469e4763877fb8323e2cf3cae0d5",
+            "encoding": "png/optimized"
+          },
+          {
+            "wall_ms": 1015.8998330000006,
+            "core_ms": 1006,
+            "rss_bytes": 24412160,
+            "bytes": 260533,
+            "sha256": "f867e0b3df9c8705f355dacc4eaa42b08f3c469e4763877fb8323e2cf3cae0d5",
+            "encoding": "png/optimized"
+          },
+          {
+            "wall_ms": 1012.0430410000001,
+            "core_ms": 1002,
+            "rss_bytes": 23232512,
+            "bytes": 260533,
+            "sha256": "f867e0b3df9c8705f355dacc4eaa42b08f3c469e4763877fb8323e2cf3cae0d5",
+            "encoding": "png/optimized"
+          }
+        ],
+        "optimized": [
+          {
+            "wall_ms": 850.1745409999994,
+            "core_ms": 840,
+            "rss_bytes": 21266432,
+            "bytes": 260533,
+            "sha256": "f867e0b3df9c8705f355dacc4eaa42b08f3c469e4763877fb8323e2cf3cae0d5",
+            "encoding": "png/raw-optimized"
+          },
+          {
+            "wall_ms": 843.695833,
+            "core_ms": 834,
+            "rss_bytes": 21151744,
+            "bytes": 260533,
+            "sha256": "f867e0b3df9c8705f355dacc4eaa42b08f3c469e4763877fb8323e2cf3cae0d5",
+            "encoding": "png/raw-optimized"
+          },
+          {
+            "wall_ms": 863.5106669999999,
+            "core_ms": 854,
+            "rss_bytes": 23904256,
+            "bytes": 260533,
+            "sha256": "f867e0b3df9c8705f355dacc4eaa42b08f3c469e4763877fb8323e2cf3cae0d5",
+            "encoding": "png/raw-optimized"
+          }
+        ]
+      },
+      "baseline": {
+        "bytes": 260533,
+        "sha256": "f867e0b3df9c8705f355dacc4eaa42b08f3c469e4763877fb8323e2cf3cae0d5",
+        "encoding": "png/optimized",
+        "wall_ms": 1012.0430410000001,
+        "core_ms": 1002,
+        "rss_bytes": 24412160
+      },
+      "optimized": {
+        "bytes": 260533,
+        "sha256": "f867e0b3df9c8705f355dacc4eaa42b08f3c469e4763877fb8323e2cf3cae0d5",
+        "encoding": "png/raw-optimized",
+        "wall_ms": 850.1745409999994,
+        "core_ms": 840,
+        "rss_bytes": 21266432
+      },
+      "size_reduction_percent": 0.0,
+      "time_reduction_percent": 15.994230822441935,
+      "rss_reduction_percent": 12.885906040268457
+    },
+    {
+      "case": "png-alpha-smart",
+      "options": {
+        "format": "png",
+        "preset": "lossless"
+      },
+      "input_sha256": "ded52238695836039f24f94ce3f0965daa96c4701ffe31e72d88a98d4caa09c0",
+      "samples": {
+        "baseline": [
+          {
+            "wall_ms": 229.11108300000114,
+            "core_ms": 219,
+            "rss_bytes": 21495808,
+            "bytes": 2163,
+            "sha256": "57fed472aca73145d03e0ef7e4bb543808855231bdafc792a7c2b6a7dc53683c",
+            "encoding": "png/optimized"
+          },
+          {
+            "wall_ms": 225.85520900000057,
+            "core_ms": 216,
+            "rss_bytes": 21676032,
+            "bytes": 2163,
+            "sha256": "57fed472aca73145d03e0ef7e4bb543808855231bdafc792a7c2b6a7dc53683c",
+            "encoding": "png/optimized"
+          },
+          {
+            "wall_ms": 226.7924170000004,
+            "core_ms": 218,
+            "rss_bytes": 21463040,
+            "bytes": 2163,
+            "sha256": "57fed472aca73145d03e0ef7e4bb543808855231bdafc792a7c2b6a7dc53683c",
+            "encoding": "png/optimized"
+          }
+        ],
+        "optimized": [
+          {
+            "wall_ms": 236.56650000000036,
+            "core_ms": 227,
+            "rss_bytes": 19431424,
+            "bytes": 2163,
+            "sha256": "57fed472aca73145d03e0ef7e4bb543808855231bdafc792a7c2b6a7dc53683c",
+            "encoding": "png/raw-optimized"
+          },
+          {
+            "wall_ms": 235.57341599999938,
+            "core_ms": 226,
+            "rss_bytes": 19333120,
+            "bytes": 2163,
+            "sha256": "57fed472aca73145d03e0ef7e4bb543808855231bdafc792a7c2b6a7dc53683c",
+            "encoding": "png/raw-optimized"
+          },
+          {
+            "wall_ms": 228.83470800000083,
+            "core_ms": 220,
+            "rss_bytes": 19857408,
+            "bytes": 2163,
+            "sha256": "57fed472aca73145d03e0ef7e4bb543808855231bdafc792a7c2b6a7dc53683c",
+            "encoding": "png/raw-optimized"
+          }
+        ]
+      },
+      "baseline": {
+        "bytes": 2163,
+        "sha256": "57fed472aca73145d03e0ef7e4bb543808855231bdafc792a7c2b6a7dc53683c",
+        "encoding": "png/optimized",
+        "wall_ms": 226.7924170000004,
+        "core_ms": 218,
+        "rss_bytes": 21495808
+      },
+      "optimized": {
+        "bytes": 2163,
+        "sha256": "57fed472aca73145d03e0ef7e4bb543808855231bdafc792a7c2b6a7dc53683c",
+        "encoding": "png/raw-optimized",
+        "wall_ms": 235.57341599999938,
+        "core_ms": 226,
+        "rss_bytes": 19431424
+      },
+      "size_reduction_percent": 0.0,
+      "time_reduction_percent": -3.8718221341584647,
+      "rss_reduction_percent": 9.60365853658537
+    },
+    {
+      "case": "png-icc-smart",
+      "options": {
+        "format": "png",
+        "preset": "lossless"
+      },
+      "input_sha256": "437084c18ffa7ca110e702c4d9b695d0002b8464ee5286abb3f13c30d6acaabf",
+      "samples": {
+        "baseline": [
+          {
+            "wall_ms": 170.9402080000011,
+            "core_ms": 162,
+            "rss_bytes": 20332544,
+            "bytes": 1846,
+            "sha256": "18692d62c8a29cafd43a52644de2012439cedc07b03a7ca3e24f274c63dc7d5f",
+            "encoding": "png/optimized"
+          },
+          {
+            "wall_ms": 166.4024169999987,
+            "core_ms": 158,
+            "rss_bytes": 19922944,
+            "bytes": 1846,
+            "sha256": "18692d62c8a29cafd43a52644de2012439cedc07b03a7ca3e24f274c63dc7d5f",
+            "encoding": "png/optimized"
+          },
+          {
+            "wall_ms": 171.52454100000014,
+            "core_ms": 161,
+            "rss_bytes": 19939328,
+            "bytes": 1846,
+            "sha256": "18692d62c8a29cafd43a52644de2012439cedc07b03a7ca3e24f274c63dc7d5f",
+            "encoding": "png/optimized"
+          }
+        ],
+        "optimized": [
+          {
+            "wall_ms": 175.08704199999949,
+            "core_ms": 166,
+            "rss_bytes": 20561920,
+            "bytes": 1846,
+            "sha256": "18692d62c8a29cafd43a52644de2012439cedc07b03a7ca3e24f274c63dc7d5f",
+            "encoding": "png/raw-optimized"
+          },
+          {
+            "wall_ms": 174.9047079999997,
+            "core_ms": 166,
+            "rss_bytes": 20611072,
+            "bytes": 1846,
+            "sha256": "18692d62c8a29cafd43a52644de2012439cedc07b03a7ca3e24f274c63dc7d5f",
+            "encoding": "png/raw-optimized"
+          },
+          {
+            "wall_ms": 172.81999999999977,
+            "core_ms": 164,
+            "rss_bytes": 18006016,
+            "bytes": 1846,
+            "sha256": "18692d62c8a29cafd43a52644de2012439cedc07b03a7ca3e24f274c63dc7d5f",
+            "encoding": "png/raw-optimized"
+          }
+        ]
+      },
+      "baseline": {
+        "bytes": 1846,
+        "sha256": "18692d62c8a29cafd43a52644de2012439cedc07b03a7ca3e24f274c63dc7d5f",
+        "encoding": "png/optimized",
+        "wall_ms": 170.9402080000011,
+        "core_ms": 161,
+        "rss_bytes": 19939328
+      },
+      "optimized": {
+        "bytes": 1846,
+        "sha256": "18692d62c8a29cafd43a52644de2012439cedc07b03a7ca3e24f274c63dc7d5f",
+        "encoding": "png/raw-optimized",
+        "wall_ms": 174.9047079999997,
+        "core_ms": 166,
+        "rss_bytes": 20561920
+      },
+      "size_reduction_percent": 0.0,
+      "time_reduction_percent": -2.3192319971896636,
+      "rss_reduction_percent": -3.122432210353332
+    },
+    {
+      "case": "tiff-ui-smart",
+      "options": {
+        "format": "tiff",
+        "preset": "lossless"
+      },
+      "input_sha256": "6df6c89cb4c0e82a88e6cf063519ce5f0ce4b4f751c2a17e61b29e01334e9a0f",
+      "samples": {
+        "baseline": [
+          {
+            "wall_ms": 14.969042000000599,
+            "core_ms": 6,
+            "rss_bytes": 15056896,
+            "bytes": 1573094,
+            "sha256": "0f0034d821fbc62987bb7fe40e648c43fefb32d77caaac6946d7ba00f75143e7",
+            "encoding": "tiff/encode"
+          },
+          {
+            "wall_ms": 15.298834000001094,
+            "core_ms": 6,
+            "rss_bytes": 15073280,
+            "bytes": 1573094,
+            "sha256": "0f0034d821fbc62987bb7fe40e648c43fefb32d77caaac6946d7ba00f75143e7",
+            "encoding": "tiff/encode"
+          },
+          {
+            "wall_ms": 15.476458000000193,
+            "core_ms": 6,
+            "rss_bytes": 16629760,
+            "bytes": 1573094,
+            "sha256": "0f0034d821fbc62987bb7fe40e648c43fefb32d77caaac6946d7ba00f75143e7",
+            "encoding": "tiff/encode"
+          }
+        ],
+        "optimized": [
+          {
+            "wall_ms": 16.344915999999543,
+            "core_ms": 7,
+            "rss_bytes": 12140544,
+            "bytes": 11635,
+            "sha256": "6ddc27ca04033f39162b41de58760a469ed78592a6850df01db80dbba2fef152",
+            "encoding": "tiff/deflate/Balanced/horizontal"
+          },
+          {
+            "wall_ms": 16.556417000000323,
+            "core_ms": 8,
+            "rss_bytes": 12156928,
+            "bytes": 11635,
+            "sha256": "6ddc27ca04033f39162b41de58760a469ed78592a6850df01db80dbba2fef152",
+            "encoding": "tiff/deflate/Balanced/horizontal"
+          },
+          {
+            "wall_ms": 16.436709000000604,
+            "core_ms": 8,
+            "rss_bytes": 12140544,
+            "bytes": 11635,
+            "sha256": "6ddc27ca04033f39162b41de58760a469ed78592a6850df01db80dbba2fef152",
+            "encoding": "tiff/deflate/Balanced/horizontal"
+          }
+        ]
+      },
+      "baseline": {
+        "bytes": 1573094,
+        "sha256": "0f0034d821fbc62987bb7fe40e648c43fefb32d77caaac6946d7ba00f75143e7",
+        "encoding": "tiff/encode",
+        "wall_ms": 15.298834000001094,
+        "core_ms": 6,
+        "rss_bytes": 15073280
+      },
+      "optimized": {
+        "bytes": 11635,
+        "sha256": "6ddc27ca04033f39162b41de58760a469ed78592a6850df01db80dbba2fef152",
+        "encoding": "tiff/deflate/Balanced/horizontal",
+        "wall_ms": 16.436709000000604,
+        "core_ms": 8,
+        "rss_bytes": 12140544
+      },
+      "size_reduction_percent": 99.2603747773496,
+      "time_reduction_percent": -7.437658320885299,
+      "rss_reduction_percent": 19.456521739130437
+    },
+    {
+      "case": "tiff-rgb-smart",
+      "options": {
+        "format": "tiff",
+        "preset": "lossless"
+      },
+      "input_sha256": "7bb11736b82ba95ed895035b6cd36e6e95566affa6bf570240e90f4cb5ea50d0",
+      "samples": {
+        "baseline": [
+          {
+            "wall_ms": 25.02583300000083,
+            "core_ms": 17,
+            "rss_bytes": 17235968,
+            "bytes": 1573094,
+            "sha256": "483fce045c6511488bd1536bda5de855de4ffbd4e56f941ebdc4df4df23aa211",
+            "encoding": "tiff/encode"
+          },
+          {
+            "wall_ms": 27.21770800000023,
+            "core_ms": 18,
+            "rss_bytes": 17268736,
+            "bytes": 1573094,
+            "sha256": "483fce045c6511488bd1536bda5de855de4ffbd4e56f941ebdc4df4df23aa211",
+            "encoding": "tiff/encode"
+          },
+          {
+            "wall_ms": 25.376250000000766,
+            "core_ms": 17,
+            "rss_bytes": 17268736,
+            "bytes": 1573094,
+            "sha256": "483fce045c6511488bd1536bda5de855de4ffbd4e56f941ebdc4df4df23aa211",
+            "encoding": "tiff/encode"
+          }
+        ],
+        "optimized": [
+          {
+            "wall_ms": 117.96391700000086,
+            "core_ms": 109,
+            "rss_bytes": 14614528,
+            "bytes": 388873,
+            "sha256": "5edc0beb2a166d4db7a281e538b17396651ea03d2476ebe65669992556ec37e3",
+            "encoding": "tiff/deflate/Balanced/horizontal"
+          },
+          {
+            "wall_ms": 117.44766700000042,
+            "core_ms": 107,
+            "rss_bytes": 15974400,
+            "bytes": 388873,
+            "sha256": "5edc0beb2a166d4db7a281e538b17396651ea03d2476ebe65669992556ec37e3",
+            "encoding": "tiff/deflate/Balanced/horizontal"
+          },
+          {
+            "wall_ms": 119.17512499999994,
+            "core_ms": 110,
+            "rss_bytes": 14630912,
+            "bytes": 388873,
+            "sha256": "5edc0beb2a166d4db7a281e538b17396651ea03d2476ebe65669992556ec37e3",
+            "encoding": "tiff/deflate/Balanced/horizontal"
+          }
+        ]
+      },
+      "baseline": {
+        "bytes": 1573094,
+        "sha256": "483fce045c6511488bd1536bda5de855de4ffbd4e56f941ebdc4df4df23aa211",
+        "encoding": "tiff/encode",
+        "wall_ms": 25.376250000000766,
+        "core_ms": 17,
+        "rss_bytes": 17268736
+      },
+      "optimized": {
+        "bytes": 388873,
+        "sha256": "5edc0beb2a166d4db7a281e538b17396651ea03d2476ebe65669992556ec37e3",
+        "encoding": "tiff/deflate/Balanced/horizontal",
+        "wall_ms": 117.96391700000086,
+        "core_ms": 109,
+        "rss_bytes": 14630912
+      },
+      "size_reduction_percent": 75.27973534957223,
+      "time_reduction_percent": -364.8595320427459,
+      "rss_reduction_percent": 15.275142314990509
+    },
+    {
+      "case": "tiff-alpha-smart",
+      "options": {
+        "format": "tiff",
+        "preset": "lossless"
+      },
+      "input_sha256": "a6a3ed6da5be201c722e2afcf9d2f217da40485f2d58ecd282e17d946de7ef1e",
+      "samples": {
+        "baseline": [
+          {
+            "wall_ms": 17.495500000000774,
+            "core_ms": 7,
+            "rss_bytes": 16859136,
+            "bytes": 1573094,
+            "sha256": "70018e0a57c77b1bbaeabe2c4712fcd818ed005f35b1f6e9def0701364cf9408",
+            "encoding": "tiff/encode"
+          },
+          {
+            "wall_ms": 14.625791999998583,
+            "core_ms": 6,
+            "rss_bytes": 15138816,
+            "bytes": 1573094,
+            "sha256": "70018e0a57c77b1bbaeabe2c4712fcd818ed005f35b1f6e9def0701364cf9408",
+            "encoding": "tiff/encode"
+          },
+          {
+            "wall_ms": 15.457458000000202,
+            "core_ms": 6,
+            "rss_bytes": 15138816,
+            "bytes": 1573094,
+            "sha256": "70018e0a57c77b1bbaeabe2c4712fcd818ed005f35b1f6e9def0701364cf9408",
+            "encoding": "tiff/encode"
+          }
+        ],
+        "optimized": [
+          {
+            "wall_ms": 21.561750000000046,
+            "core_ms": 11,
+            "rss_bytes": 13926400,
+            "bytes": 16631,
+            "sha256": "8a679cc41e7e926030d2f376e8ade0a3fad2135a86ccc9cb5c35c661efbce161",
+            "encoding": "tiff/deflate/Balanced/horizontal"
+          },
+          {
+            "wall_ms": 19.386083000000554,
+            "core_ms": 11,
+            "rss_bytes": 13090816,
+            "bytes": 16631,
+            "sha256": "8a679cc41e7e926030d2f376e8ade0a3fad2135a86ccc9cb5c35c661efbce161",
+            "encoding": "tiff/deflate/Balanced/horizontal"
+          },
+          {
+            "wall_ms": 18.92091599999901,
+            "core_ms": 9,
+            "rss_bytes": 12206080,
+            "bytes": 16631,
+            "sha256": "8a679cc41e7e926030d2f376e8ade0a3fad2135a86ccc9cb5c35c661efbce161",
+            "encoding": "tiff/deflate/Balanced/horizontal"
+          }
+        ]
+      },
+      "baseline": {
+        "bytes": 1573094,
+        "sha256": "70018e0a57c77b1bbaeabe2c4712fcd818ed005f35b1f6e9def0701364cf9408",
+        "encoding": "tiff/encode",
+        "wall_ms": 15.457458000000202,
+        "core_ms": 6,
+        "rss_bytes": 15138816
+      },
+      "optimized": {
+        "bytes": 16631,
+        "sha256": "8a679cc41e7e926030d2f376e8ade0a3fad2135a86ccc9cb5c35c661efbce161",
+        "encoding": "tiff/deflate/Balanced/horizontal",
+        "wall_ms": 19.386083000000554,
+        "core_ms": 11,
+        "rss_bytes": 13090816
+      },
+      "size_reduction_percent": 98.94278409300398,
+      "time_reduction_percent": -25.415724888272706,
+      "rss_reduction_percent": 13.528138528138534
+    },
+    {
+      "case": "tiff-recompress",
+      "options": {
+        "format": "tiff",
+        "preset": "lossless"
+      },
+      "input_sha256": "483fce045c6511488bd1536bda5de855de4ffbd4e56f941ebdc4df4df23aa211",
+      "samples": {
+        "baseline": [
+          {
+            "wall_ms": 19.898416999998503,
+            "core_ms": 10,
+            "rss_bytes": 18432000,
+            "bytes": 1573094,
+            "sha256": "483fce045c6511488bd1536bda5de855de4ffbd4e56f941ebdc4df4df23aa211",
+            "encoding": "tiff/encode"
+          },
+          {
+            "wall_ms": 19.857667000000134,
+            "core_ms": 9,
+            "rss_bytes": 18432000,
+            "bytes": 1573094,
+            "sha256": "483fce045c6511488bd1536bda5de855de4ffbd4e56f941ebdc4df4df23aa211",
+            "encoding": "tiff/encode"
+          },
+          {
+            "wall_ms": 19.54887499999991,
+            "core_ms": 10,
+            "rss_bytes": 18415616,
+            "bytes": 1573094,
+            "sha256": "483fce045c6511488bd1536bda5de855de4ffbd4e56f941ebdc4df4df23aa211",
+            "encoding": "tiff/encode"
+          }
+        ],
+        "optimized": [
+          {
+            "wall_ms": 117.13812500000031,
+            "core_ms": 107,
+            "rss_bytes": 16777216,
+            "bytes": 388873,
+            "sha256": "5edc0beb2a166d4db7a281e538b17396651ea03d2476ebe65669992556ec37e3",
+            "encoding": "tiff/deflate/Balanced/horizontal"
+          },
+          {
+            "wall_ms": 123.33308300000034,
+            "core_ms": 113,
+            "rss_bytes": 16809984,
+            "bytes": 388873,
+            "sha256": "5edc0beb2a166d4db7a281e538b17396651ea03d2476ebe65669992556ec37e3",
+            "encoding": "tiff/deflate/Balanced/horizontal"
+          },
+          {
+            "wall_ms": 117.41145799999941,
+            "core_ms": 108,
+            "rss_bytes": 16809984,
+            "bytes": 388873,
+            "sha256": "5edc0beb2a166d4db7a281e538b17396651ea03d2476ebe65669992556ec37e3",
+            "encoding": "tiff/deflate/Balanced/horizontal"
+          }
+        ]
+      },
+      "baseline": {
+        "bytes": 1573094,
+        "sha256": "483fce045c6511488bd1536bda5de855de4ffbd4e56f941ebdc4df4df23aa211",
+        "encoding": "tiff/encode",
+        "wall_ms": 19.857667000000134,
+        "core_ms": 10,
+        "rss_bytes": 18432000
+      },
+      "optimized": {
+        "bytes": 388873,
+        "sha256": "5edc0beb2a166d4db7a281e538b17396651ea03d2476ebe65669992556ec37e3",
+        "encoding": "tiff/deflate/Balanced/horizontal",
+        "wall_ms": 117.41145799999941,
+        "core_ms": 108,
+        "rss_bytes": 16809984
+      },
+      "size_reduction_percent": 75.27973534957223,
+      "time_reduction_percent": -491.26511689413775,
+      "rss_reduction_percent": 8.799999999999997
+    },
+    {
+      "case": "memory-bmp",
+      "options": {
+        "format": "bmp",
+        "preset": "lossless",
+        "metadata": "strip"
+      },
+      "input_sha256": "f383c327f8a1bd2b4cb9392045c38f1d781807b79d07897b8c5d393f1677a802",
+      "samples": {
+        "baseline": [
+          {
+            "wall_ms": 206.60320800000065,
+            "core_ms": 196,
+            "rss_bytes": 127680512,
+            "bytes": 16777338,
+            "sha256": "f383c327f8a1bd2b4cb9392045c38f1d781807b79d07897b8c5d393f1677a802",
+            "encoding": "bmp/encode"
+          },
+          {
+            "wall_ms": 205.31404200000125,
+            "core_ms": 194,
+            "rss_bytes": 129810432,
+            "bytes": 16777338,
+            "sha256": "f383c327f8a1bd2b4cb9392045c38f1d781807b79d07897b8c5d393f1677a802",
+            "encoding": "bmp/encode"
+          },
+          {
+            "wall_ms": 210.94104100000166,
+            "core_ms": 200,
+            "rss_bytes": 127664128,
+            "bytes": 16777338,
+            "sha256": "f383c327f8a1bd2b4cb9392045c38f1d781807b79d07897b8c5d393f1677a802",
+            "encoding": "bmp/encode"
+          }
+        ],
+        "optimized": [
+          {
+            "wall_ms": 198.5677499999987,
+            "core_ms": 189,
+            "rss_bytes": 77332480,
+            "bytes": 16777338,
+            "sha256": "f383c327f8a1bd2b4cb9392045c38f1d781807b79d07897b8c5d393f1677a802",
+            "encoding": "bmp/encode"
+          },
+          {
+            "wall_ms": 196.85237499999886,
+            "core_ms": 186,
+            "rss_bytes": 77332480,
+            "bytes": 16777338,
+            "sha256": "f383c327f8a1bd2b4cb9392045c38f1d781807b79d07897b8c5d393f1677a802",
+            "encoding": "bmp/encode"
+          },
+          {
+            "wall_ms": 200.22475000000028,
+            "core_ms": 191,
+            "rss_bytes": 77332480,
+            "bytes": 16777338,
+            "sha256": "f383c327f8a1bd2b4cb9392045c38f1d781807b79d07897b8c5d393f1677a802",
+            "encoding": "bmp/encode"
+          }
+        ]
+      },
+      "baseline": {
+        "bytes": 16777338,
+        "sha256": "f383c327f8a1bd2b4cb9392045c38f1d781807b79d07897b8c5d393f1677a802",
+        "encoding": "bmp/encode",
+        "wall_ms": 206.60320800000065,
+        "core_ms": 196,
+        "rss_bytes": 127680512
+      },
+      "optimized": {
+        "bytes": 16777338,
+        "sha256": "f383c327f8a1bd2b4cb9392045c38f1d781807b79d07897b8c5d393f1677a802",
+        "encoding": "bmp/encode",
+        "wall_ms": 198.5677499999987,
+        "core_ms": 189,
+        "rss_bytes": 77332480
+      },
+      "size_reduction_percent": 0.0,
+      "time_reduction_percent": 3.889319085501286,
+      "rss_reduction_percent": 39.4328243295265
+    },
+    {
+      "case": "memory-jxl-bmp",
+      "options": {
+        "format": "bmp",
+        "metadata": "strip"
+      },
+      "input_sha256": "e61b19b57a3e6991c35497299c554681d0300dbbc71e8b2833fbcc33ff76f2e0",
+      "samples": {
+        "baseline": [
+          {
+            "wall_ms": 662.8969579999975,
+            "core_ms": 653,
+            "rss_bytes": 164085760,
+            "bytes": 16777338,
+            "sha256": "f383c327f8a1bd2b4cb9392045c38f1d781807b79d07897b8c5d393f1677a802",
+            "encoding": "bmp/encode"
+          },
+          {
+            "wall_ms": 683.5737920000007,
+            "core_ms": 670,
+            "rss_bytes": 164052992,
+            "bytes": 16777338,
+            "sha256": "f383c327f8a1bd2b4cb9392045c38f1d781807b79d07897b8c5d393f1677a802",
+            "encoding": "bmp/encode"
+          },
+          {
+            "wall_ms": 661.2546250000015,
+            "core_ms": 650,
+            "rss_bytes": 164036608,
+            "bytes": 16777338,
+            "sha256": "f383c327f8a1bd2b4cb9392045c38f1d781807b79d07897b8c5d393f1677a802",
+            "encoding": "bmp/encode"
+          }
+        ],
+        "optimized": [
+          {
+            "wall_ms": 664.462125,
+            "core_ms": 654,
+            "rss_bytes": 113819648,
+            "bytes": 16777338,
+            "sha256": "f383c327f8a1bd2b4cb9392045c38f1d781807b79d07897b8c5d393f1677a802",
+            "encoding": "bmp/encode"
+          },
+          {
+            "wall_ms": 669.0207920000013,
+            "core_ms": 658,
+            "rss_bytes": 113672192,
+            "bytes": 16777338,
+            "sha256": "f383c327f8a1bd2b4cb9392045c38f1d781807b79d07897b8c5d393f1677a802",
+            "encoding": "bmp/encode"
+          },
+          {
+            "wall_ms": 661.257667000001,
+            "core_ms": 650,
+            "rss_bytes": 113639424,
+            "bytes": 16777338,
+            "sha256": "f383c327f8a1bd2b4cb9392045c38f1d781807b79d07897b8c5d393f1677a802",
+            "encoding": "bmp/encode"
+          }
+        ]
+      },
+      "baseline": {
+        "bytes": 16777338,
+        "sha256": "f383c327f8a1bd2b4cb9392045c38f1d781807b79d07897b8c5d393f1677a802",
+        "encoding": "bmp/encode",
+        "wall_ms": 662.8969579999975,
+        "core_ms": 653,
+        "rss_bytes": 164052992
+      },
+      "optimized": {
+        "bytes": 16777338,
+        "sha256": "f383c327f8a1bd2b4cb9392045c38f1d781807b79d07897b8c5d393f1677a802",
+        "encoding": "bmp/encode",
+        "wall_ms": 664.462125,
+        "core_ms": 654,
+        "rss_bytes": 113672192
+      },
+      "size_reduction_percent": 0.0,
+      "time_reduction_percent": -0.23611014971689492,
+      "rss_reduction_percent": 30.71007690002996
+    }
+  ],
+  "worker_sha256": {
+    "baseline": "f9ffe5fedc8747df8d9d53064c622c8c1ec4d3d09d0ab842750792490e75fb0f",
+    "optimized": "295a2022c783f7543be70fd9e98ed80e918aaca80d142bd19f143533c46cacca"
+  }
+}
