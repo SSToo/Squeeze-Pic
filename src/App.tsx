@@ -387,7 +387,7 @@ export default function App() {
     <div className="app-shell simple-app" key={dark ? "dark" : "light"}>
       <header className="topbar">
         <div className="brand">
-          <img src="/logo.svg" width="32" height="32" alt="" />
+          <img src="/logo.png" width="40" height="40" alt="" />
           <h1>
             Squeeze <span>Pic</span>
           </h1>

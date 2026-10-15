@@ -1,6 +1,6 @@
 # Squeeze Pic 0.2.2 验证记录
 
-日期：2026-10-12 至 2026-10-14。环境：macOS Apple silicon，Rust 1.92.0，Node.js 23.11.0。
+日期：2026-10-12 至 2026-10-15。环境：macOS Apple silicon，Rust 1.92.0，Node.js 23.11.0。
 
 ## 自动检查
 
@@ -18,6 +18,14 @@ WebP 编码由 libwebp 完成，结果由 image 的纯 Rust 解码器检查；JP
 0.2.2 新增生成 PNG 的 ICC / EXIF / XMP / 文本 / pHYs 保留、快速 PNG 内容分流、TIFF 三种策略的 Deflate / straight-alpha 标记与逐像素回归、BMP 直接编码透明与隐藏 RGB 回归。原件复核使用 64 KiB 分块哈希并保留输入变更与大小限制检查。第二轮测量调用最终安装包的 worker，两项 4MP 样本的峰值 RSS 分别下降约 39% 与 31%，见[深度优化记录](PERFORMANCE-0.2.2.md)。
 
 ## 本机操作验证
+
+2026-10-15 将强调色更新为 `#1E8FFD`，主按钮保持此色；文字选中状态使用同色系深浅变化，以保留对比度。使用提供的 PNG 替换界面 Logo、浏览器图标及 Tauri 应用图标。TypeScript / Vite 构建通过，并在最终原生 `.app` 检查了明暗主题、压缩/转换切换与 PNG 选中状态；应用签名及新 DMG 完整性检查通过。
+
+![新版 Logo 与浅色主题](screenshots/macos-brand-light.jpg)
+
+![新版 Logo 与深色主题](screenshots/macos-brand-dark.jpg)
+
+以下为先前功能回归记录及当时界面截图。
 
 已在实际 Tauri 原生窗口验证文件选择器多选导入三张图片、图片信息/缩略图、PNG 批量转 WebP、最长边 600 px、结果报告、原图与成品解码预览、分割对比及明暗主题。普通图由 1200 × 800 输出为 600 × 400，方向 6 图片由可见 800 × 1200 输出为 400 × 600，透明图保持 600 × 600。浏览器界面另验证格式选择、百分比尺寸和严格无损互斥。
 
