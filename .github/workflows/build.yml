@@ -15,7 +15,7 @@ concurrency:
 jobs:
   desktop:
     name: Build ${{ matrix.target }}
-    timeout-minutes: 60
+    timeout-minutes: 90
     strategy:
       fail-fast: false
       matrix:
@@ -42,6 +42,8 @@ jobs:
           components: rustfmt,clippy
           targets: ${{ matrix.target }}
       - uses: Swatinem/rust-cache@v2
+        with:
+          cache-on-failure: "true"
       - name: Check project and release versions
         shell: bash
         env:

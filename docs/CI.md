@@ -12,7 +12,7 @@
 
 打开 Actions 中一次成功的运行，在 **Artifacts** 下载对应 `squeeze-pic-目标架构`。每份包含安装包、第三方许可归档、构建信息和 `SHA256SUMS.txt`，保留 14 天。Mac DMG 打包时验证完整性并检查应用签名；所有平台检查实际 worker 版本。
 
-JPEG XL 所需的 CMake、Windows LLVM/libclang 和平台 C/C++ 工具链在构建步骤检查或定位；worker 与桌面应用使用相同目标架构。Cargo 与 npm 使用锁文件，Rust 固定为 1.92.0，Node 为 22，启用依赖缓存。
+JPEG XL 所需的 CMake、Windows LLVM/libclang 和平台 C/C++ 工具链在构建步骤检查或定位；worker 与桌面应用使用相同目标架构。Cargo 与 npm 使用锁文件，Rust 固定为 1.92.0，Node 为 22，启用依赖缓存。首次原生编译最多使用 90 分钟构建预算，失败时也保存可复用的 Rust 缓存。
 
 同一分支的普通 push 会等待正在执行的安装包构建完成，再运行最近一份待构建提交，保留完整构建及其缓存。Pull Request 的过时构建会自动取消。
 
