@@ -14,6 +14,8 @@
 
 JPEG XL 所需的 CMake、Windows LLVM/libclang 和平台 C/C++ 工具链在构建步骤检查或定位；worker 与桌面应用使用相同目标架构。Cargo 与 npm 使用锁文件，Rust 固定为 1.92.0，Node 为 22，启用依赖缓存。
 
+同一分支的普通 push 会等待正在执行的安装包构建完成，再运行最近一份待构建提交，保留完整构建及其缓存。Pull Request 的过时构建会自动取消。
+
 ## 版本发布
 
 当 push `v` 开头的版本标签时，标签必须与 `package.json`、`package-lock.json`、Cargo workspace / lock 和 Tauri 配置全部一致。三个平台都成功后，工作流核对下载产物的 SHA-256 与构建来源，创建 GitHub Release 草稿、上传全部安装包与许可归档，验证上传大小与摘要后自动发布。预发布版本标签（例如 `v0.3.0-beta.1`）标为 prerelease。
