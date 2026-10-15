@@ -1,0 +1,111 @@
+name: Desktop checks and packages
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: desktop-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ !startsWith(github.ref, 'refs/tags/v') }}
+
+jobs:
+  desktop:
+    name: Build ${{ matrix.target }}
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            target: x86_64-pc-windows-msvc
+          - os: macos-15
+            target: aarch64-apple-darwin
+          - os: macos-15-intel
+            target: x86_64-apple-darwin
+    runs-on: ${{ matrix.os }}
+    env:
+      CARGO_BUILD_TARGET: ${{ matrix.target }}
+      CARGO_BUILD_JOBS: 2
+      MACOSX_DEPLOYMENT_TARGET: "13.0"
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - uses: dtolnay/rust-toolchain@1.92.0
+        with:
+          components: rustfmt,clippy
+          targets: ${{ matrix.target }}
+      - uses: Swatinem/rust-cache@v2
+      - name: Check project and release versions
+        shell: bash
+        env:
+          RELEASE_TAG: ${{ startsWith(github.ref, 'refs/tags/v') && github.ref_name || '' }}
+        run: node scripts/release.mjs check-version "$RELEASE_TAG"
+      - name: Check release scripts
+        run: node --test scripts/test-release.mjs
+      - name: Locate Windows libclang
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          $clang = 'C:\Program Files\LLVM\bin'
+          if (!(Test-Path "$clang\libclang.dll")) { throw 'LLVM libclang is required by jxl-sys.' }
+          "LIBCLANG_PATH=$clang" >> $env:GITHUB_ENV
+      - name: Check native build tools
+        run: cmake --version
+      - run: npm ci
+      - name: Prepare Rust worker
+        run: node scripts/prepare-worker.mjs
+      - name: Prepare bundled notices
+        run: npm run notices
+      - run: npm run check
+      - run: cargo fmt --all -- --check
+      - run: cargo clippy --workspace --all-targets --locked -- -D warnings
+      - run: cargo test --workspace --locked
+      - name: Build macOS application and DMG
+        if: runner.os == 'macOS'
+        run: |
+          npm run tauri -- build --target ${{ matrix.target }} --bundles app
+          node scripts/package-macos.mjs
+      - name: Verify macOS application signature
+        if: runner.os == 'macOS'
+        run: codesign --verify --deep --strict "target/$CARGO_BUILD_TARGET/release/bundle/macos/Squeeze Pic.app"
+      - name: Build Windows installer
+        if: runner.os == 'Windows'
+        run: npm run tauri -- build --target ${{ matrix.target }} --bundles nsis
+      - name: Verify worker and collect installers
+        run: node scripts/release.mjs stage ${{ matrix.target }} ci-artifacts
+      - uses: actions/upload-artifact@v7
+        with:
+          name: squeeze-pic-${{ matrix.target }}
+          path: ci-artifacts/
+          if-no-files-found: error
+          retention-days: 14
+
+  release:
+    name: Publish version release
+    needs: desktop
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - uses: actions/download-artifact@v8
+        with:
+          pattern: squeeze-pic-*
+          path: release-artifacts
+      - name: Verify all platforms and publish installers with checksums
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: node scripts/release.mjs publish "$RELEASE_TAG" release-artifacts release-assets

@@ -1,5 +1,7 @@
 # Squeeze Pic
 
+[![Desktop checks and packages](https://github.com/SSToo/Squeeze-Pic/actions/workflows/build.yml/badge.svg)](https://github.com/SSToo/Squeeze-Pic/actions/workflows/build.yml)
+
 基于 Tauri 2、React / TypeScript 和 Rust 的离线图片压缩、格式转换与尺寸调整工具。当前为本地试用版本 0.2.2。
 
 ## 当前功能
@@ -81,6 +83,8 @@ npm run tauri -- build --bundles nsis
 JPEG XL 的静态构建需要可用的 `cmake` 命令；也可通过 `CMAKE` 环境变量指定其路径。
 
 打包脚本编译匹配当前架构的 worker，生成第三方通知，并将所需组件放入应用。包位于 `target/release/bundle/`。发布签名与公证需另行配置产品身份。
+
+GitHub Actions 已配置 Windows x64、Mac Apple silicon 与 Mac Intel 自动检查和安装包构建。普通提交可在 Actions 下载产物；推送匹配项目版本的 `v*` 标签后自动发布 GitHub Release，附带许可归档和 SHA-256 校验文件。详见 [自动构建说明](docs/CI.md)。
 
 ## 当前边界
 

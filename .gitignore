@@ -7,3 +7,6 @@ tmp/
 .DS_Store
 *.log
 third-party/
+ci-artifacts/
+release-artifacts/
+release-assets/
