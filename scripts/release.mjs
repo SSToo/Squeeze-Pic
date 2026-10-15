@@ -19,7 +19,7 @@ export function checkVersion(tag = "", root = resolve(".")) {
     .match(/\[workspace\.package\]([^]*?)(?=\n\[|$)/)?.[1]
     .match(/^version\s*=\s*"([^"]+)"/m)?.[1];
   const lock = json("package-lock.json");
-  const cargoLock = readFileSync(join(root, "Cargo.lock"), "utf8");
+  const cargoLock = readFileSync(join(root, "Cargo.lock"), "utf8").replaceAll("\r\n", "\n");
   const crates = ["squeeze-pic-core", "squeeze-pic-cli", "squeeze-pic-desktop"];
   if (
     !/^\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?$/.test(version) ||

@@ -38,6 +38,15 @@ test("reject mismatched tags, Cargo locks and project versions", (t) => {
   assert.throws(() => checkVersion("v0.2.2", root), /must all match/);
 });
 
+test("accept Windows CRLF checkout of Cargo manifests and locks", (t) => {
+  const { root } = fixture(t);
+  for (const name of ["Cargo.toml", "Cargo.lock"]) {
+    const file = join(root, name);
+    writeFileSync(file, readFileSync(file, "utf8").replaceAll("\n", "\r\n"));
+  }
+  assert.equal(checkVersion("v0.2.2", root), "0.2.2");
+});
+
 test("require three complete platforms and verify downloaded artifact bytes", (t) => {
   const { root, artifacts, output } = fixture(t);
   const file = join(artifacts, `squeeze-pic-${platforms[0].target}`, assetNames("0.2.2", platforms[0])[0]);
